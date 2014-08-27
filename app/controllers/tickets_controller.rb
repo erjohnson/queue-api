@@ -1,6 +1,7 @@
 class TicketsController < ApplicationController
   def index
-    render json: Ticket.all
+    @tickets = Ticket.all
+    render json: @tickets
   end
 
   def create
@@ -9,6 +10,7 @@ class TicketsController < ApplicationController
   end
 
   def show
-    render json: Ticket.find(params[:id])
+    @ticket = Ticket.find(params[:id])
+    render json: @ticket
   end
 end
