@@ -7,4 +7,8 @@ class TicketsController < ApplicationController
     @ticket = Ticket.new(params[:ticket])
     @ticket.save
   end
+
+  def show
+    render json: Ticket.find(params[:id])
+  end
 end
