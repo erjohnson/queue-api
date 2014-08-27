@@ -1,1 +1,5 @@
 require 'rails_helper'
+
+describe Ticket do
+  it { should belong_to :project }
+end
